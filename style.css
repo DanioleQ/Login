@@ -33,10 +33,6 @@ input[type="email"]:focus {
   background-color: #e9f3e9;
   color: #428c42;
 }
-#login_div {
-  text-align: center;
-  font-size: 5rem;
-}
 #login {
   text-decoration: none;
   width: 300px;

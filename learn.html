@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>Strona główna</title>
     <link rel="icon" href="img/icon.png" type="image/icon type" />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        height: 720px;
-        display: grid;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
-      }
-      div {
-        grid-column: 3;
-        grid-row: 3;
-      }
-    </style>
+    <link rel="stylesheet" href="style_main.css" />
   </head>
   <body>
-    <div id="login_div"></div>
+    <header>
+      <a class="home">Home</a>
+      <a class="profile" id="login_div"></a>
+    </header>
     <script>
       var userData = localStorage.getItem("userData");
       if (userData) {
@@ -31,7 +23,7 @@
         console.log("Brak danych użytkownika w localStorage.");
       }
       let login_div = document.getElementById("login_div");
-      login_div.textContent = "Hello " + userDataobject.login;
+      login_div.textContent = userDataobject.login;
     </script>
   </body>
 </html>
