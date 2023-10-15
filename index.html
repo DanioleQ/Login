@@ -2,25 +2,43 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Strona główna</title>
+    <title>Logowanie</title>
     <link rel="icon" href="img/icon.png" type="image/icon type" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        height: 720px;
-        display: grid;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
-      }
-      div {
-        grid-column: 3;
-        grid-row: 3;
-      }
-    </style>
+    <script src="script.js"></script>
   </head>
-  <body>
-    <div id="login_div"></div>
+  <body id="bgi">
+    <div id="container">
+      <form id="form1">
+        <input type="text" placeholder="E-mail:" id="mail" /><br /><br />
+        <input
+          type="password"
+          placeholder="Hasło:"
+          id="password_login"
+        /><br /><br />
+        <input
+          type="button"
+          value="Zaloguj się"
+          id="login"
+          onclick="checkUser()"
+        /><br />
+      </form>
+      <hr width="250" color="gray" />
+      <br />
+      <div id="new-acc">
+        <input
+          type="button"
+          value="Utwórz nowe konto"
+          onclick="gotoPage()"
+          form="form1"
+          id="new_acc"
+        />
+      </div>
+    </div>
     <script>
+      function gotoPage() {
+        window.location.href = "register.html";
+      }
       var userData = localStorage.getItem("userData");
       if (userData) {
         var userDataobject = JSON.parse(userData);
@@ -30,8 +48,23 @@
       } else {
         console.log("Brak danych użytkownika w localStorage.");
       }
-      let login_div = document.getElementById("login_div");
-      login_div.textContent = "Hello " + userDataobject.login;
+      function checkUser() {
+        var checkUserData = {
+          password: document.getElementById("password_login").value,
+          email: document.getElementById("mail").value,
+        };
+        if (
+          checkUserData.email == userDataobject.email &&
+          checkUserData.password == userDataobject.password
+        ) {
+          console.log("Passed");
+          window.location.href = "main.html";
+        } else {
+          console.log("Wrong");
+        }
+        document.getElementById("password_login").value = "";
+        document.getElementById("mail").value = "";
+      }
     </script>
   </body>
 </html>

@@ -12,5 +12,5 @@ function makeUser() {
   document.getElementById("nick").value = "";
   document.getElementById("password").value = "";
   document.getElementById("email").value = "";
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
