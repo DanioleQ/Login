@@ -1,0 +1,72 @@
+#bgi {
+  background-image: url("img/prism.png");
+}
+#container {
+  background-color: #e6e6e6;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  padding: 50px;
+  box-shadow: 8px 8px 17px 1px rgb(53, 54, 58);
+  border: 2px solid #e6e6e6;
+  border-radius: 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 300px;
+  background-color: #efefef;
+  color: #666;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  box-shadow: 3px 3px 4px 1px rgb(172, 172, 174);
+  border: 1px solid #a5cda5;
+  background-color: #e9f3e9;
+  color: #428c42;
+}
+#login_div {
+  text-align: center;
+  font-size: 5rem;
+}
+#login {
+  text-decoration: none;
+  width: 300px;
+  background-color: #36b03c;
+  font-size: 20px;
+  color: white;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 2;
+  outline: none;
+}
+#login:hover {
+  background-color: #37b93d;
+}
+#new_acc {
+  width: 200px;
+  background-color: #36b03c;
+  font-size: 20px;
+  color: white;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+#new_acc:hover {
+  background-color: #37b93d;
+}
+#new-acc {
+  margin-left: 50px;
+}

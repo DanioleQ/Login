@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Logowanie</title>
+    <link rel="icon" href="img/icon.png" type="image/icon type" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body id="bgi">
+    <div id="container">
+      <form id="form1">
+        <input type="text" placeholder="E-mail:" id="mail" /><br /><br />
+        <input
+          type="password"
+          placeholder="Hasło:"
+          id="password_login"
+        /><br /><br />
+        <input
+          type="button"
+          formaction="index.html"
+          value="Zaloguj się"
+          id="login"
+          onclick="checkUser()"
+        /><br />
+      </form>
+      <hr width="250" color="gray" />
+      <br />
+      <div id="new-acc">
+        <input
+          type="button"
+          value="Utwórz nowe konto"
+          onclick="gotoPage()"
+          form="form1"
+          id="new_acc"
+        />
+      </div>
+    </div>
+    <script>
+      function gotoPage() {
+        window.location.href = "register.html";
+      }
+      var userData = localStorage.getItem("userData");
+      if (userData) {
+        var userDataobject = JSON.parse(userData);
+        console.log("Login: " + userDataobject.login);
+        console.log("Password: " + userDataobject.password);
+        console.log("E-mail: " + userDataobject.email);
+      } else {
+        console.log("Brak danych użytkownika w localStorage.");
+      }
+      function checkUser() {
+        var checkUserData = {
+          password: document.getElementById("password_login").value,
+          email: document.getElementById("mail").value,
+        };
+        if (
+          checkUserData.email == userDataobject.email &&
+          checkUserData.password == userDataobject.password
+        ) {
+          console.log("Passed");
+          window.location.href = "index.html";
+        } else {
+          console.log("Wrong");
+        }
+        document.getElementById("password_login").value = "";
+        document.getElementById("mail").value = "";
+      }
+    </script>
+  </body>
+</html>
